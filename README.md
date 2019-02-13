@@ -143,36 +143,3 @@ This is can be done via settings in the `serverless.yml`.
 ```
 
 In case you expect a lot of traffic fluctuation we recommend to checkout this guide on how to auto scale DynamoDB [https://aws.amazon.com/blogs/aws/auto-scale-dynamodb-with-dynamic-dynamodb/](https://aws.amazon.com/blogs/aws/auto-scale-dynamodb-with-dynamic-dynamodb/)
-
-
-Service Information
-service: bf-messages
-stage: dev
-region: ap-northeast-1
-stack: bf-messages-dev
-resources: 34
-api keys:
-  None
-endpoints:
-  POST - https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev/messages
-  GET - https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev/messages
-  GET - https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev/messages/{id}
-  PUT - https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev/messages/{id}
-  DELETE - https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev/messages/{id}
-functions:
-  create: bf-messages-dev-create
-  list: bf-messages-dev-list
-  get: bf-messages-dev-get
-  update: bf-messages-dev-update
-  delete: bf-messages-dev-delete
-layers:
-  None
-
-Stack Outputs
-DeleteLambdaFunctionQualifiedArn: arn:aws:lambda:ap-northeast-1:414742917823:function:bf-messages-dev-delete:1
-CreateLambdaFunctionQualifiedArn: arn:aws:lambda:ap-northeast-1:414742917823:function:bf-messages-dev-create:1
-GetLambdaFunctionQualifiedArn: arn:aws:lambda:ap-northeast-1:414742917823:function:bf-messages-dev-get:1
-UpdateLambdaFunctionQualifiedArn: arn:aws:lambda:ap-northeast-1:414742917823:function:bf-messages-dev-update:1
-ListLambdaFunctionQualifiedArn: arn:aws:lambda:ap-northeast-1:414742917823:function:bf-messages-dev-list:1
-ServiceEndpoint: https://sajqug1ebi.execute-api.ap-northeast-1.amazonaws.com/dev
-ServerlessDeploymentBucketName: bf-messages-dev-serverlessdeploymentbucket-1useriamqdfa6
