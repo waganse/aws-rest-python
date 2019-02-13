@@ -10,9 +10,9 @@ dynamodb = boto3.resource('dynamodb')
 
 def create(event, context):
     data = json.loads(event['body'])
-    if 'text' not in data:
+    if 'symbol' not in data:
         logging.error("Validation Failed")
-        raise Exception("Couldn't create the todo item.")
+        raise Exception("Couldn't create the messager item.")
         return
 
     timestamp = int(time.time() * 1000)
@@ -32,7 +32,7 @@ def create(event, context):
         'enGB': data['enGB'],
         'description': data['description'],
         'page': data['page'],
-        'valid': TRUE,
+        'available': data['available'],
         'createdAt': timestamp,
         'updatedAt': timestamp,
     }
