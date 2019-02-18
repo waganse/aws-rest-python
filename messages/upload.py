@@ -13,14 +13,8 @@ dynamodb = boto3.resource('dynamodb')
 
 
 def upload(event, context):
-    request = event['body']
-    base64String = request['base64String']
 
-    buffer = base64.decodestring(base64String)
-
-    initial_df = pd.read_csv(buffer)
-
-    print(initial_df)
+    print(event)
 
     # timestamp = int(time.time() * 1000)
 
